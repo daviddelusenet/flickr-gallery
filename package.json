@@ -1,0 +1,25 @@
+{
+  "name": "flickr-gallery",
+  "version": "1.0.0",
+  "description": "A Flickr image gallery made with React",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviddelusenet/flickr-gallery.git"
+  },
+  "keywords": [
+    "Flickr",
+    "image",
+    "gallery",
+    "React"
+  ],
+  "author": "David de Lusenet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daviddelusenet/flickr-gallery/issues"
+  },
+  "homepage": "https://github.com/daviddelusenet/flickr-gallery#readme"
+}
