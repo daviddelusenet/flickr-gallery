@@ -26,6 +26,11 @@
     "url": "https://github.com/daviddelusenet/flickr-gallery/issues"
   },
   "homepage": "https://github.com/daviddelusenet/flickr-gallery#readme",
+  "browserslist": [
+    "Last 1 Chrome versions",
+    "Last 1 Edge versions",
+    "Last 1 Firefox versions"
+  ],
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "react": "^16.8.6",
