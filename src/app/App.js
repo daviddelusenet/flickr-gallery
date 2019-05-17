@@ -32,7 +32,6 @@ class FlickrGalleryApp extends React.PureComponent {
 
   render() {
     const { photos } = this.state;
-    console.log(photos);
 
     return (
       <>

@@ -1,5 +1,6 @@
 import { ImageWrapper, StyledGallery } from './Gallery.sc';
 
+import getFlickrURL from '../../utils/getFlickrURL';
 import getImageURL from '../../utils/getImageURL';
 import Image from '../Image/Image';
 import PropTypes from 'prop-types';
@@ -13,6 +14,7 @@ export default class Gallery extends React.PureComponent {
     photos: PropTypes.arrayOf(PropTypes.shape({
       farm: PropTypes.number.isRequired,
       id: PropTypes.string.isRequired,
+      owner: PropTypes.string.isRequired,
       secret: PropTypes.string.isRequired,
       server: PropTypes.string.isRequired,
     })).isRequired,
@@ -54,10 +56,11 @@ export default class Gallery extends React.PureComponent {
         {photos.length > 0 && photos.map(({
           farm,
           id,
+          owner,
           secret,
           server,
         }) => (
-          <ImageWrapper key={id}>
+          <ImageWrapper href={getFlickrURL(owner, id)} key={id} target="_blank">
             <Image alt={id} src={getImageURL(farm, id, secret, server)} />
           </ImageWrapper>
         ))}
