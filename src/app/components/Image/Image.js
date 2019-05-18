@@ -1,6 +1,8 @@
+import { LoaderWrapper, StyledImage, Wrapper } from './Image.sc';
+
+import Loader from '../Loader/Loader';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyledImage } from './Image.sc';
 
 export default class Image extends React.PureComponent {
   static propTypes = {
@@ -27,12 +29,19 @@ export default class Image extends React.PureComponent {
     const { isLoaded } = this.state;
 
     return (
-      <StyledImage
-        alt={alt}
-        isVisible={isLoaded}
-        onLoad={this.handleLoad}
-        src={src}
-      />
+      <Wrapper>
+        <StyledImage
+          alt={alt}
+          isVisible={isLoaded}
+          onLoad={this.handleLoad}
+          src={src}
+        />
+        {!isLoaded && (
+          <LoaderWrapper>
+            <Loader size={Loader.sizes.small} />
+          </LoaderWrapper>
+        )}
+      </Wrapper>
     );
   }
 }
