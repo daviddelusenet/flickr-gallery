@@ -1,6 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 import styled, { css, keyframes } from 'styled-components';
 import { LOADER_SIZES } from './Loader.consts';
+import PropTypes from 'prop-types';
 import { SILVER } from '../../styles/consts';
 
 const LoaderAnimation = keyframes`
@@ -28,3 +29,7 @@ export const StyledLoader = styled.div`
     height: 64px;
   `};
 `;
+
+StyledLoader.propTypes = {
+  size: PropTypes.oneOf(Object.values(LOADER_SIZES)).isRequired,
+};
