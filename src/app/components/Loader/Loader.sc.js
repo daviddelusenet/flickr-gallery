@@ -13,8 +13,8 @@ const LoaderAnimation = keyframes`
 
 export const StyledLoader = styled.div`
   border: 4px solid ${SILVER};
-  border-bottom: 0;
   border-radius: 100%;
+  border-bottom-color: transparent;
   animation: ${LoaderAnimation} 0.75s linear infinite;
 
   ${({ isSmall }) => isSmall && css`
