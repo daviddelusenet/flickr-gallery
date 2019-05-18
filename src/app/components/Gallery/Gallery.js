@@ -2,7 +2,9 @@ import { ImageWrapper, StyledGallery } from './Gallery.sc';
 
 import getFlickrURL from '../../utils/getFlickrURL';
 import getImageURL from '../../utils/getImageURL';
+import getRandomValueFromArray from '../../utils/getRandomValueFromArray';
 import Image from '../Image/Image';
+import { IMAGE_WRAPPER_SIZES } from './Gallery.consts';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -60,7 +62,12 @@ export default class Gallery extends React.PureComponent {
           secret,
           server,
         }) => (
-          <ImageWrapper href={getFlickrURL(owner, id)} key={id} target="_blank">
+          <ImageWrapper
+            href={getFlickrURL(owner, id)}
+            key={id}
+            size={getRandomValueFromArray(Object.values(IMAGE_WRAPPER_SIZES))}
+            target="_blank"
+          >
             <Image
               alt={id}
               src={getImageURL({
