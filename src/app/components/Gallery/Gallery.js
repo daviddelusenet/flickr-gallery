@@ -61,7 +61,15 @@ export default class Gallery extends React.PureComponent {
           server,
         }) => (
           <ImageWrapper href={getFlickrURL(owner, id)} key={id} target="_blank">
-            <Image alt={id} src={getImageURL(farm, id, secret, server)} />
+            <Image
+              alt={id}
+              src={getImageURL({
+                farm,
+                id,
+                secret,
+                server,
+              })}
+            />
           </ImageWrapper>
         ))}
         <div ref={this.galleryBottomRef} />
