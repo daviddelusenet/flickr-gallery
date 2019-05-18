@@ -1,22 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { SIZES } from './Loader.consts';
 import { StyledLoader } from './Loader.sc';
 
 const Loader = ({ size }) => (
-  <StyledLoader isMedium={size === Loader.sizes.medium} isSmall={size === Loader.sizes.small} />
+  <StyledLoader size={size} />
 );
 
-Loader.sizes = {
-  medium: 'medium',
-  small: 'small',
-};
-
 Loader.propTypes = {
-  size: PropTypes.oneOf(Object.values(Loader.sizes)),
+  size: PropTypes.oneOf(Object.values(SIZES)),
 };
 
 Loader.defaultProps = {
-  size: Loader.sizes.medium,
+  size: SIZES.MEDIUM,
 };
 
 export default Loader;
