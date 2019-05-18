@@ -1,5 +1,6 @@
 /* eslint import/prefer-default-export: 0 */
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -15,6 +16,10 @@ export const StyledImage = styled.img`
     opacity: 1;
   `};
 `;
+
+StyledImage.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+};
 
 export const LoaderWrapper = styled.div`
   position: absolute;
