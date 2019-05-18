@@ -1,6 +1,6 @@
+import { LOADER_SIZES } from './Loader.consts';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { SIZES } from './Loader.consts';
 import { StyledLoader } from './Loader.sc';
 
 const Loader = ({ size }) => (
@@ -8,11 +8,11 @@ const Loader = ({ size }) => (
 );
 
 Loader.propTypes = {
-  size: PropTypes.oneOf(Object.values(SIZES)),
+  size: PropTypes.oneOf(Object.values(LOADER_SIZES)),
 };
 
 Loader.defaultProps = {
-  size: SIZES.MEDIUM,
+  size: LOADER_SIZES.MEDIUM,
 };
 
 export default Loader;

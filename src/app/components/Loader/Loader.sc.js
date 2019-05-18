@@ -1,7 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 import styled, { css, keyframes } from 'styled-components';
+import { LOADER_SIZES } from './Loader.consts';
 import { SILVER } from '../../styles/consts';
-import { SIZES } from './Loader.consts';
 
 const LoaderAnimation = keyframes`
   0% {
@@ -18,12 +18,12 @@ export const StyledLoader = styled.div`
   border-bottom-color: transparent;
   animation: ${LoaderAnimation} 0.75s linear infinite;
 
-  ${({ size }) => size === SIZES.SMALL && css`
+  ${({ size }) => size === LOADER_SIZES.SMALL && css`
     width: 48px;
     height: 48px;
   `};
 
-  ${({ size }) => size === SIZES.MEDIUM && css`
+  ${({ size }) => size === LOADER_SIZES.MEDIUM && css`
     width: 64px;
     height: 64px;
   `};
