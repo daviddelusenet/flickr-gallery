@@ -5,6 +5,7 @@ import {
 } from '../../styles/consts';
 import styled, { css } from 'styled-components';
 import { IMAGE_WRAPPER_SIZES } from './Gallery.consts';
+import media from 'styled-media-query';
 import PropTypes from 'prop-types';
 
 export const StyledGallery = styled.div`
@@ -37,22 +38,47 @@ export const ImageWrapper = styled.a`
   position: relative;
   flex: 0 1 auto;
   margin: 0 10px 20px;
+  width: 100%;
   color: ${BLACK};
 
   ${({ size }) => size === IMAGE_WRAPPER_SIZES.SMALL && css`
-    width: 200px;
+    ${media.between('medium', 'large')`
+      width: 200px;
+    `}
+
+    ${media.greaterThan('large')`
+      width: 240px;
+    `}
   `};
 
   ${({ size }) => size === IMAGE_WRAPPER_SIZES.MEDIUM && css`
-    width: 280px;
+    ${media.between('medium', 'large')`
+      width: 280px;
+    `}
+
+    ${media.greaterThan('large')`
+      width: 320px;
+    `}
   `};
 
   ${({ size }) => size === IMAGE_WRAPPER_SIZES.LARGE && css`
-    width: 360px;
+    ${media.between('medium', 'large')`
+      width: 360px;
+    `}
+
+    ${media.greaterThan('large')`
+      width: 400px;
+    `}
   `};
 
   ${({ size }) => size === IMAGE_WRAPPER_SIZES.XLARGE && css`
-    width: 420px;
+    ${media.between('medium', 'large')`
+      width: 420px;
+    `}
+
+    ${media.greaterThan('large')`
+      width: 460px;
+    `}
   `};
 
   &:hover {
