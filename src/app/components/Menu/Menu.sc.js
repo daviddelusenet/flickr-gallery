@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
+import { HELVETICA } from '../../styles/consts';
 
 export const StyledMenu = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
 `;
@@ -18,6 +19,8 @@ export const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
   color: black;
+  font-family: ${HELVETICA};
+  font-size: 12px;
 
   ${({ isActive }) => isActive && css`
     font-weight: bold;

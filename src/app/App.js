@@ -47,12 +47,12 @@ class FlickrGalleryApp extends React.PureComponent {
   };
 
   render() {
-    const { photos } = this.state;
+    const { groupID, photos } = this.state;
 
     return (
       <>
         <GlobalStyle />
-        <Menu onGroupSelect={this.handleGroupSelect} />
+        <Menu activeGroupID={groupID} onGroupSelect={this.handleGroupSelect} />
         <Gallery onReachBottom={this.getPhotos} photos={photos} />
       </>
     );

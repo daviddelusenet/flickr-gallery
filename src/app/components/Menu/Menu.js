@@ -4,10 +4,11 @@ import { GROUP_IDS } from '../../utils/consts';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Menu = ({ onGroupSelect }) => (
+const Menu = ({ activeGroupID, onGroupSelect }) => (
   <StyledMenu>
     {Object.keys(GROUP_IDS).map(groupID => (
       <Button
+        isActive={activeGroupID === groupID}
         key={groupID}
         onClick={() => {
           onGroupSelect(groupID);
@@ -20,6 +21,7 @@ const Menu = ({ onGroupSelect }) => (
 );
 
 Menu.propTypes = {
+  activeGroupID: PropTypes.string.isRequired,
   onGroupSelect: PropTypes.func.isRequired,
 };
 
