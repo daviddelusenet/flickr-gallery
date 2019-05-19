@@ -6,14 +6,14 @@ import React from 'react';
 
 const Menu = ({ onGroupSelect }) => (
   <StyledMenu>
-    {Object.keys(GROUP_IDS).map(groupName => (
+    {Object.keys(GROUP_IDS).map(groupID => (
       <Button
-        key={groupName}
+        key={groupID}
         onClick={() => {
-          onGroupSelect(GROUP_IDS[groupName]);
+          onGroupSelect(groupID);
         }}
       >
-        {groupName}
+        {GROUP_IDS[groupID]}
       </Button>
     ))}
   </StyledMenu>

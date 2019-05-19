@@ -2,14 +2,14 @@ export const ENDPOINT = 'https://api.flickr.com/services/rest?method=';
 export const FLICKR_URL = 'https://flickr.com/photos';
 
 export const GROUP_IDS = {
-  'Black and White': '16978849%40N00',
-  'Catchy Colors': '71332142@N00',
-  FlickrCentral: '34427469792@N01',
-  'Less Is More': '42097308@N00',
+  '16978849%40N00': 'Black and White',
+  '34427469792@N01': 'FlickrCentral',
+  '42097308@N00': 'Less Is More',
+  '71332142@N00': 'Catchy Colors',
 };
 
 export const INITIAL_STATE = {
-  groupID: Object.values(GROUP_IDS)[0],
+  groupID: Object.keys(GROUP_IDS)[0],
   page: 0,
   pages: 0,
   photos: [],
