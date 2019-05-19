@@ -1,4 +1,11 @@
-import { ImageWrapper, StyledGallery } from './Gallery.sc';
+import {
+  CTA,
+  Divider,
+  ImageWrapper,
+  Overlay,
+  StyledGallery,
+  Title,
+} from './Gallery.sc';
 
 import getFlickrURL from '../../utils/getFlickrURL';
 import getImageURL from '../../utils/getImageURL';
@@ -19,6 +26,7 @@ export default class Gallery extends React.PureComponent {
       owner: PropTypes.string.isRequired,
       secret: PropTypes.string.isRequired,
       server: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
     })).isRequired,
   };
 
@@ -61,6 +69,7 @@ export default class Gallery extends React.PureComponent {
           owner,
           secret,
           server,
+          title,
         }) => (
           <ImageWrapper
             href={getFlickrURL(owner, id)}
@@ -68,6 +77,15 @@ export default class Gallery extends React.PureComponent {
             size={getRandomValueFromArray(Object.values(IMAGE_WRAPPER_SIZES))}
             target="_blank"
           >
+            <Overlay>
+              <Title>
+                {title}
+              </Title>
+              <Divider />
+              <CTA>
+                {'Visit website'}
+              </CTA>
+            </Overlay>
             <Image
               alt={id}
               src={getImageURL({
