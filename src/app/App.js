@@ -1,26 +1,31 @@
 import Gallery from './components/Gallery/Gallery';
 import getGroupPhotos from './utils/getGroupPhotos';
 import GlobalStyle from './styles/base';
-import { GROUP_ID } from './utils/consts';
 import { hot } from 'react-hot-loader';
+import { INITIAL_STATE } from './utils/consts';
+import Menu from './components/Menu/Menu';
 import React from 'react';
 
 class FlickrGalleryApp extends React.PureComponent {
-  state = {
-    page: 0,
-    pages: 0,
-    photos: [],
-  };
+  state = INITIAL_STATE;
 
   componentDidMount() {
     this.getPhotos(true);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { groupID } = this.state;
+
+    if (groupID !== prevState.groupID) {
+      this.getPhotos(true);
+    }
+  }
+
   getPhotos = (firstRequest = false) => {
-    const { page, pages } = this.state;
+    const { groupID, page, pages } = this.state;
 
     if (firstRequest || page < pages) {
-      getGroupPhotos(GROUP_ID, page + 1)
+      getGroupPhotos(groupID, page + 1)
         .then(({ photos }) => {
           this.setState(prevState => ({
             page: photos.page,
@@ -34,12 +39,20 @@ class FlickrGalleryApp extends React.PureComponent {
     }
   };
 
+  handleGroupSelect = (groupID) => {
+    this.setState({
+      ...INITIAL_STATE,
+      groupID,
+    });
+  };
+
   render() {
     const { photos } = this.state;
 
     return (
       <>
         <GlobalStyle />
+        <Menu onGroupSelect={this.handleGroupSelect} />
         <Gallery onReachBottom={this.getPhotos} photos={photos} />
       </>
     );
