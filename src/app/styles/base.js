@@ -1,6 +1,6 @@
+import { GEORGIA, WHITE } from './consts';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import { WHITE } from './consts';
 
 export default createGlobalStyle`
   ${reset}
@@ -11,9 +11,7 @@ export default createGlobalStyle`
 
   html {
     background-color: ${WHITE};
-  }
-
-  body {
+    font-family: ${GEORGIA};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
