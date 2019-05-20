@@ -7,7 +7,9 @@ import Menu from './components/Menu/Menu';
 import React from 'react';
 
 class FlickrGalleryApp extends React.PureComponent {
-  state = INITIAL_STATE;
+  state = {
+    ...INITIAL_STATE,
+  };
 
   componentDidMount() {
     this.getPhotos(true);
