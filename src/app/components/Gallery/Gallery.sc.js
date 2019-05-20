@@ -13,7 +13,12 @@ export const StyledGallery = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 66px 10px 40px;
+
+  ${media.greaterThan('medium')`
+    padding: 78px 30px 40px;
+  `}
+
 `;
 
 export const Overlay = styled.div`

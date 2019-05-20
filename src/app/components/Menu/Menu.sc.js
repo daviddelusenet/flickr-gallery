@@ -12,7 +12,7 @@ export const StyledMenu = styled.div`
   justify-content: center;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 20px 8px;
+  padding: 16px 8px;
   width: 100%;
 
   ${media.greaterThan('medium')`
@@ -29,11 +29,13 @@ export const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
   padding: 0;
+  line-height: 14px;
   color: black;
   font-family: ${HELVETICA};
   font-size: 10px;
 
   ${media.greaterThan('medium')`
+    line-height: 18px;
     font-size: 12px;
   `}
 
